@@ -24,8 +24,8 @@ import Alltime from "components/admincomp/Alltime";
 import Single from "pages/single/Single";
 import Write from "components/admincomp/write/Write";
 import Singleak from "pages/single/Singleak";
-import Blooddata from "components/admincomp/Blooddata"
-import ContactUsData from "components/admincomp/ContactUsData"
+import Blooddata from "components/admincomp/Blooddata";
+import ContactUsData from "components/admincomp/ContactUsData";
 import Login from "pages/Login";
 import Signup from "pages/Signup";
 
@@ -34,7 +34,6 @@ import Signup from "pages/Signup";
 export default function App() {
   // If you want to disable the animation just use the disabled `prop` like below on your page's component
   // return <AnimationRevealPage disabled>xxxxxxxxxx</AnimationRevealPage>;
-
 
   return (
     <Router>
@@ -49,65 +48,63 @@ export default function App() {
           <BlogIndexPage />
         </Route>
         <Route path="/accha">
-          <Aksharsala/>
+          <Aksharsala />
         </Route>
         <Route path="/team">
-          <Team/>
+          <Team />
         </Route>
         <Route path="/team1">
-        <AboutUs/>
+          <AboutUs />
         </Route>
         <Route path="/bloodyform">
-          <BloodForm />  
+          <BloodForm />
         </Route>
         <Route path="/dash">
-          <Dashboard/>  
+          <Dashboard />
         </Route>
         <Route path="/blooddatabase">
-          <BloodDatabase/>  
+          <BloodDatabase />
         </Route>
         <Route path="/Addpost">
-          <Write/>  
+          <Write />
         </Route>
-        
+
         <Route path="/Allblogs">
-          <Allblogs/>  
+          <Allblogs />
         </Route>
-        
+
         <Route path="/Allevents">
-          <Allevents/>  
+          <Allevents />
         </Route>
         <Route path="/Allteam">
-          <Allteam/>  
+          <Allteam />
         </Route>
         <Route path="/single">
-          <Single/>  
+          <Single />
         </Route>
         <Route path="/singleak">
-          <Singleak/>  
+          <Singleak />
         </Route>
         <Route path="/Alltime">
-          <Alltime/>  
+          <Alltime />
         </Route>
         <Route path="/BloodData">
-          <Blooddata/>  
+          <Blooddata />
         </Route>
         <Route path="/login_page">
-          <Login/>  
+          <Login />
         </Route>
         <Route path="/Signup_page">
-          <Signup/>  
+          <Signup />
         </Route>
         <Route path="/contactData">
-          <ContactUsData/>  
+          <ContactUsData />
         </Route>
-        
-        
+
         <Route path="/">
-          <EventLandingPage />  
-         
+          <EventLandingPage />
         </Route>
-       
+
         {/* <Route path="/contactus">
           <ContactUs />
         </Route> */}
