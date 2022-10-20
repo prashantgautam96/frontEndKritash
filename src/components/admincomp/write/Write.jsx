@@ -16,18 +16,15 @@ export default function Write() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    const res = await axios.post(
-      "/posts",
-      {
-        title,
-        desc,
-        blog,
-        photo,
-        username,
-      },
-      { headers: { Authorization: `Bearer ${cookies.token}` } }
-    );
+    const formData = new FormData();
+    formData.append("photo", photo);
+    formData.append("title", title);
+    formData.append("desc", desc);
+    formData.append("blog", blog);
+    formData.append("username", username);
+    const res = await axios.post("/posts", formData, {
+      headers: { Authorization: `Bearer ${cookies.token}` },
+    });
     console.log(res);
   };
 
@@ -62,7 +59,9 @@ export default function Write() {
             type="file"
             name="myImage"
             accept="image/*"
-            onChange={(e) => setPhoto(e.target.value)}
+            onChange={(e) => {
+              setPhoto(e.target.files[0]);
+            }}
           />
           <input
             className="writeInput"
