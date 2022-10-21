@@ -1,41 +1,38 @@
 import { Link } from "react-router-dom";
 import React, { useEffect, useState } from "react";
-import axios from 'axios';
-import {
-  useLocation,
-} from 'react-router-dom';
+import axios from "axios";
+import { useLocation } from "react-router-dom";
 import "./SinglePost.css";
-import ReactHtmlParser from 'react-html-parser';
+import ReactHtmlParser from "react-html-parser";
 
 export default function SinglePost() {
-  const parse = require('html-react-parser');
-  const location= useLocation()
-  const path =location.pathname.split("/")[2];
+  const parse = require("html-react-parser");
+  const location = useLocation();
+  const path = location.pathname.split("/")[2];
 
-  const [post,setPost]=useState({})
+  const [post, setPost] = useState({});
 
-  useEffect(()=>{
-    const getPost = async()=>{
+  useEffect(() => {
+    const getPost = async () => {
+      const res = await axios.get("/posts/" + path);
 
-    const res= await axios.get("/posts/"+path);
-    
-    setPost(res.data)
-
-  };
-  getPost();
-},[path]);
-
+      setPost(res.data);
+    };
+    getPost();
+  }, [path]);
+  const imageAPI = `${process.env.REACT_APP_BACKEND_URL}/image`;
 
   return (
     <div className="singlePost">
       <div className="singlePostWrapper">
         {post.photo && (
-        <img
-          className="singlePostImg"
-          src={post.photo}
-          alt=""
-        />)}
-        
+          <img
+            className="singlePostImg"
+            src={new URL(`${imageAPI}/${post.photo}`).href}
+            alt=""
+          />
+        )}
+
         <h1 className="singlePostTitle">
           {post.title}
           <div className="singlePostEdit">
@@ -54,17 +51,8 @@ export default function SinglePost() {
           </span>
           <span>{new Date(post.createdAt).toDateString()}</span>
         </div>
-        <div>
-
-       
-        {ReactHtmlParser(post.desc)}
-          </div>
-        <p className="singlePostDesc">
-          
-          
-        
-          
-        </p>
+        <div>{ReactHtmlParser(post.desc)}</div>
+        <p className="singlePostDesc"></p>
       </div>
     </div>
   );
