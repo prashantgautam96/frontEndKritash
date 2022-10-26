@@ -4,12 +4,12 @@ import axios, { Axios } from 'axios'
 
 
 
-const Allblogs = () => {
+const Allaksh = () => {
     const [posts,setPosts]= useState([]);
 
     useEffect(()=>{
       const fetchPost = async ()=>{
-        const res= await axios.get("/posts")
+        const res= await axios.get("/akshar")
         // console.log(res)
         setPosts(res.data)
       }
@@ -51,7 +51,7 @@ const Allblogs = () => {
           
             {/* todo text */}
             <a href="/Addpost">
-            <span className="text">{card.title}</span>
+            <span className="text">{card.place}</span>
             </a>
             {/* Emphasis label */}
             <small className="badge badge-danger"><i className="far fa-clock" /> {card.createdAt}</small>
@@ -105,7 +105,7 @@ const Allblogs = () => {
       </div>
   {/* /.card-body */}
       <div className="card-footer clearfix">
-        <a href="/Addpost">
+        <a href="/Add_A">
           <button type="button" className="btn btn-primary float-right"><i className="fas fa-plus" /> Add item</button>
         </a>
       </div>
@@ -117,4 +117,4 @@ const Allblogs = () => {
   )
 }
 
-export default Allblogs
+export default Allaksh

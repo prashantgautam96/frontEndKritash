@@ -75,7 +75,7 @@ export default () => {
       <NavLink href="/team">
         Team
       </NavLink>
-      <NavLink href="/blogging">
+      <NavLink href="/events_page">
         Events
       </NavLink>
     </NavLinks>,

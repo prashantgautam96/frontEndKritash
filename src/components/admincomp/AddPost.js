@@ -5,7 +5,7 @@ const AddPost = () => {
 
   const [title,setTitle]=useState("")
   const [desc,setDesc]=useState("")
-  const [username,setUsername]=useState("")
+  const [author,setAuthor]=useState("")
   const [blog,setBlog]=useState("")
   
 
@@ -18,7 +18,7 @@ const AddPost = () => {
      
       title,
       desc,
-      username,
+      author,
       blog,
      
     });
@@ -35,7 +35,7 @@ const AddPost = () => {
                     <div className="form-group">
                       <input type="text" className="form-control" id="title" name="title" placeholder="Title" onChange={e=>setTitle(e.target.value)} required />
                       <input type="text" className="form-control" id="title" name="title" placeholder="Description" onChange={e=>setDesc(e.target.value)} required />
-                      <input type="text" className="form-control" id="title" name="title" placeholder="username" onChange={e=>setUsername(e.target.value)} required />
+                      <input type="text" className="form-control" id="title" name="title" placeholder="username" onChange={e=>setAuthor(e.target.value)} required />
                       
 
                     </div>
@@ -45,7 +45,7 @@ const AddPost = () => {
 
                     </div>
                       
-                  <button type="submit" id="submit" name="submit" className="btn btn-primary pull-right">Add Post</button>
+                      <button type="submit" id="submit" name="submit" className="btn btn-primary pull-right">Add Post</button>
                   </form>
               </div>
           

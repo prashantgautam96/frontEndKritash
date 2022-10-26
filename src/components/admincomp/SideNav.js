@@ -76,7 +76,7 @@ const SideNav = () => {
           </a>
         </li>
         <li className="nav-item">
-          <a href="#" className="nav-link">
+          <a href="" className="nav-link">
             <i className="nav-icon fas fa-copy" />
             <p>
               Posts
@@ -98,7 +98,7 @@ const SideNav = () => {
               </a>
             </li>
             <li className="nav-item">
-              <a href="/Allevents" className="nav-link">
+              <a href="/aksh" className="nav-link">
                 <i className="far fa-circle nav-icon" />
                 <p>Aksharsala</p>
               </a>

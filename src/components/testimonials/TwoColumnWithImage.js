@@ -79,25 +79,25 @@ export default () => {
       imageSrc:
         "https://kritashiitjammu.files.wordpress.com/2020/08/whatsapp-image-2020-08-14-at-1.04.42-pm.jpeg?w=715",
       quote:
-        "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia.",
-      customerName: "Charlotte Hale",
-      customerTitle: "CEO, Delos Inc."
+        "Working for the holistic advancement of economic , political and socially marginalized communities and implementing specific, customized, cost-effective, scalable and replicable models of community development.",
+      customerName: "",
+      customerTitle: "VISION"
     },
     {
       imageSrc:
         "https://kritashiitjammu.files.wordpress.com/2020/08/20180313_182046.jpg?w=715",
       quote:
-        "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia.",
-      customerName: "Adam Cuppy",
-      customerTitle: "Founder, EventsNYC"
+        "To bring back smiles by educating, spreading awareness, and helping the needy, and finding our ways towards the sustainable development of society.",
+      customerName: "",
+      customerTitle: "MISSION"
     },
     {
       imageSrc:
         "https://kritashiitjammu.files.wordpress.com/2020/08/whatsapp-image-2020-08-14-at-1.04.42-pm.jpeg?w=715",
       quote:
-        "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia.",
-      customerName: "Steven Marcetti",
-      customerTitle: "Event Manager, Brite"
+        "Our values are to Respect for Human Rights,Commitme,Transparency,IntegrityTeam work & LoveCompassion for all living beings",
+      customerName: "",
+      customerTitle: "VALUES"
     }
   ];
   return (

@@ -60,7 +60,7 @@ const IllustrationImage = styled.div`
 export default ({
   logoLinkUrl = "#",
   illustrationImageSrc = illustration,
-  headingText = "Sign Up For Treact",
+  headingText = "Sign Up For Kritash",
   formAction = "#",
   formMethod = "get",
   socialButtons = [
@@ -110,8 +110,8 @@ export default ({
             </LogoLink>
             <MainContent>
               <Heading>{headingText}</Heading>
-              <FormContainer>
-                <SocialButtonsContainer>
+               <FormContainer>
+                {/*<SocialButtonsContainer>
                   {socialButtons.map((socialButton, index) => (
                     <SocialButton key={index} href={socialButton.url}>
                       <span className="iconContainer">
@@ -127,7 +127,7 @@ export default ({
                 </SocialButtonsContainer>
                 <DividerTextContainer>
                   <DividerText>Or Sign up with your e-mail</DividerText>
-                </DividerTextContainer>
+                </DividerTextContainer> */}
                 <Form
                   action={formAction}
                   method={formMethod}
@@ -153,13 +153,13 @@ export default ({
                     <span className="text">{submitButtonText}</span>
                   </SubmitButton>
                   <p tw="mt-6 text-xs text-gray-600 text-center">
-                    I agree to abide by treact's{" "}
-                    <a
-                      href={tosUrl}
+                    I agree to abide by Kritash's{" "}
+                    {/* <a
+                      href={}
                       tw="border-b border-gray-500 border-dotted"
                     >
                       Terms of Service
-                    </a>{" "}
+                    </a>{" "} */}
                     and its{" "}
                     <a
                       href={privacyPolicyUrl}
@@ -169,7 +169,7 @@ export default ({
                     </a>
                   </p>
 
-                  <p tw="mt-8 text-sm text-gray-600 text-center">
+                  {/* <p tw="mt-8 text-sm text-gray-600 text-center">
                     Already have an account?{" "}
                     <a
                       href={signInUrl}
@@ -177,7 +177,7 @@ export default ({
                     >
                       Sign In
                     </a>
-                  </p>
+                  </p> */}
                 </Form>
               </FormContainer>
             </MainContent>

@@ -5,6 +5,7 @@ import { ReactComponent as SvgDotPatternIcon } from "../../images/dot-pattern.sv
 import { SectionHeading as HeadingTitle } from "../misc/Headings.js";
 import axios, { Axios } from 'axios'
 import { Link } from "react-router-dom";
+import ReactHtmlParser from "react-html-parser";
 
 const Container = tw.div`relative`;
 
@@ -108,7 +109,7 @@ export default () => {
       url: "https://timerse.com"
     }
   ];
-
+  const imageAPI = `${process.env.REACT_APP_BACKEND_URL}/image`;
   return (
     <Container>
       <SingleColumn>
@@ -133,11 +134,15 @@ export default () => {
           ))} */}
           {posts.slice(0,3).map((post, i) => (
             <Card key={i} reversed={i % 2 === 1}>
-              <Image imageSrc={img} />
+              <Image imageSrc={new URL(`${imageAPI}/${post.photo}`).href} />
+              {/* <img
+                    src={new URL(`${imageAPI}/${post.photo}`).href}
+                    alt={post.username}
+                  /> */}
               <Details>
                 <Subtitle>{post.username}</Subtitle>
                 <Title>{post.title}</Title>
-                <Description>{post.desc}</Description>
+                <Description>{ReactHtmlParser(post.blog)}</Description>
                 <Links>
                 <Link to={`/single/${post._id}`}>
                      See More

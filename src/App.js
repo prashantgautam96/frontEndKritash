@@ -7,7 +7,9 @@ import ComponentRenderer from "ComponentRenderer.js";
 import MainLandingPage from "MainLandingPage.js";
 import ThankYouPage from "ThankYouPage.js";
 import BlogIndexPage from "pages/BlogIndex.js";
+import EventIndexPage from "pages/EventIndex.js"
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import {Cookies} from "react-cookie";
 import Aksharsala from "pages/Aksharsala";
 import Team from "pages/Team";
 import AboutUs from "pages/AboutUs";
@@ -21,6 +23,7 @@ import Allblogs from "components/admincomp/Allblogs";
 import Allevents from "components/admincomp/Allevents";
 import Allteam from "components/admincomp/Allteam";
 import Alltime from "components/admincomp/Alltime";
+import Allaksh from "components/admincomp/Allaksh";
 import Single from "pages/single/Single";
 import Write from "components/admincomp/write/Write";
 import Singleak from "pages/single/Singleak";
@@ -28,13 +31,18 @@ import Blooddata from "components/admincomp/Blooddata";
 import ContactUsData from "components/admincomp/ContactUsData";
 import Login from "pages/Login";
 import Signup from "pages/Signup";
+import Write_A from "components/admincomp/write/Write_A"
+import Write_E from "components/admincomp/write/Write_E"
+import Write_T from "components/admincomp/write/Write_T";
+
 
 // import SinglePost from "components/singlePost/SinglePost";
+
 
 export default function App() {
   // If you want to disable the animation just use the disabled `prop` like below on your page's component
   // return <AnimationRevealPage disabled>xxxxxxxxxx</AnimationRevealPage>;
-
+  // const token = Cookies.get('token');
   return (
     <Router>
       <Switch>
@@ -47,6 +55,10 @@ export default function App() {
         <Route path="/blogging">
           <BlogIndexPage />
         </Route>
+        <Route path="/events_page">
+          <EventIndexPage />
+        </Route>
+
         <Route path="/accha">
           <Aksharsala />
         </Route>
@@ -68,7 +80,16 @@ export default function App() {
         <Route path="/Addpost">
           <Write />
         </Route>
-
+        <Route path="/Add_A">
+          <Write_A />
+        </Route>
+        <Route path="/Add_E">
+          <Write_E />
+        </Route>
+        <Route path="/Add_T">
+          <Write_T />
+        </Route>
+        
         <Route path="/Allblogs">
           <Allblogs />
         </Route>
@@ -78,6 +99,9 @@ export default function App() {
         </Route>
         <Route path="/Allteam">
           <Allteam />
+        </Route>
+        <Route path="/Alltime">
+          <Alltime />
         </Route>
         <Route path="/single">
           <Single />
@@ -90,6 +114,9 @@ export default function App() {
         </Route>
         <Route path="/BloodData">
           <Blooddata />
+        </Route>
+        <Route path="/aksh">
+          <Allaksh />
         </Route>
         <Route path="/login_page">
           <Login />

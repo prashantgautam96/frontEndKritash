@@ -35,17 +35,17 @@ export default function SinglePost() {
 
         <h1 className="singlePostTitle">
           {post.title}
-          <div className="singlePostEdit">
+          {/* <div className="singlePostEdit">
             <i className="singlePostIcon far fa-edit"></i>
             <i className="singlePostIcon far fa-trash-alt"></i>
-          </div>
+          </div> */}
         </h1>
         <div className="singlePostInfo">
           <span>
             Author:
             <b className="singlePostAuthor">
               <Link className="link" to="/posts?username=Safak">
-                {post.username}
+                {post.author} 
               </Link>
             </b>
           </span>

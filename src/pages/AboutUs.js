@@ -16,11 +16,48 @@ import SupportIconImage from "images/support-icon.svg";
 import ShieldIconImage from "images/shield-icon.svg";
 import CustomerLoveIconImage from "images/simple-icon.svg";
 
+import  { NavLink, NavLinks, PrimaryLink, LogoLink, NavToggle, DesktopNavLinks } from "components/headers/light.js";
 const Subheading = tw.span`uppercase tracking-wider text-sm`;
+const StyledHeader = styled(Header)`
+  ${tw`pt-8 max-w-none`}
+  ${DesktopNavLinks} ${NavLink}, ${LogoLink} {
+    ${tw`text-gray-100 hover:border-gray-300 hover:text-gray-300`}
+  }
+  ${NavToggle}.closed {
+    ${tw`text-gray-100 hover:text-primary-500`}
+  }
+`;
 export default () => {
+  const navLinks = [
+    <NavLinks key={1}>
+      <NavLink href="/">
+        Home
+      </NavLink>
+      <NavLink href="/blogging">
+        Blogs
+      </NavLink>
+      <NavLink href="/accha">
+        Aksharshala
+      </NavLink>
+      <NavLink href="/team1">
+        About
+      </NavLink>
+      <NavLink href="/team">
+        Team
+      </NavLink>
+      <NavLink href="/events_page">
+        Events
+      </NavLink>
+    </NavLinks>,
+    <NavLinks key={2}>
+      <PrimaryLink href="/bloodyForm">
+        Join Us
+      </PrimaryLink>
+    </NavLinks>
+  ];
   return (
     <AnimationRevealPage>
-      
+      <StyledHeader links={navLinks} />
       <MainFeature1
         subheading={<Subheading>About Treact</Subheading>}
         heading="We are a modern design agency."

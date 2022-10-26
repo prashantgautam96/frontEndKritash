@@ -66,7 +66,7 @@ export default ({
       We've done some <span tw="text-primary-500">akhsharsala projects.</span>
     </>
   ),
-  description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua enim ad minim veniam.",
+  description = "Aksharshala, with the principle of “Each One, Teach One.” to unveil the education to the children hailing from the underprivileged sections of society such as the kids of the labours and workers in the institute itself. Teaching the kids , was a challenge to our volunteers. Still, their zeal to thwart the challenges proved to gather more kids towards Aksharshala.",
   linkText = "View all Projects",
   cardLinkText = "Read Case Study",
   textOnLeft = false
@@ -131,21 +131,21 @@ export default ({
                 <CardImage imageSrc={img} />
                 <CardText>
                   <CardHeader>
-                    <CardCompany>{card.place}</CardCompany>
-                    <CardType>{card.subject}</CardType>
+                    <CardCompany>{posts.place}</CardCompany>
+                    <CardType>{posts.subject}</CardType>
                   </CardHeader>
-                  <CardTitle>{card.desc}</CardTitle>
+                  <CardTitle>{posts.desc}</CardTitle>
                   <CardMeta>
                     <CardMetaFeature>
-                      <TimeIcon /> {card.link}
+                      {/* <TimeIcon /> {posts.link} */}
                     </CardMetaFeature>
                     <CardMetaFeature>
-                      <LocationIcon /> {card.photo}
+                      {/* <LocationIcon /> {card.photo} */}
                     </CardMetaFeature>
                   </CardMeta>
 
                   <CardAction>
-                    <Link to={`/accha`}>accha</Link>
+                    <Link to={`/accha`}>Details</Link>
                    
                     </CardAction>
                 </CardText>

@@ -86,7 +86,7 @@ const Home = () => {
       </div>
       {/* /.row */}
       {/* Main row */}
-      <div className="row">
+      {/* <div className="row"> */}
         {/* Left col */}
         {/* <section className="col-lg-7 connectedSortable"> */}
           {/* Custom tabs (Charts with tabs)*/}
@@ -443,7 +443,7 @@ const Home = () => {
         {/* right col (We are only adding the ID to make the widgets sortable)*/}
         
         {/* right col */}
-      </div>
+      {/* </div> */}
       {/* /.row (main row) */}
     </div>{/* /.container-fluid */}
   </section>

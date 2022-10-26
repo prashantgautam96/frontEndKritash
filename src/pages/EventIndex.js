@@ -50,7 +50,7 @@ const ButtonContainer = tw.div`flex justify-center`;
 const LoadMoreButton = tw(PrimaryButton)`mt-16 mx-auto`;
 
 export default ({
-  headingText = "Blog Posts",
+  headingText = "Events Posts",
   posts = [
     {
       imageSrc:
@@ -100,7 +100,6 @@ export default ({
   const onLoadMoreClick = () => {
     setVisible(v => v + 6);
   };
-  const imageAPI = `${process.env.REACT_APP_BACKEND_URL}/image`;
   return (
     <AnimationRevealPage>
       <Hero />
@@ -111,16 +110,16 @@ export default ({
           </HeadingRow>
           <Posts>
             {blogs.slice(0, visible).map((post, index) => (
-              <PostContainer key={index} featured={post.featured}>
-                <Post className="group" as="a" href={post.url}>
-                  <Image imageSrc={new URL(`${imageAPI}/${post.photo}`).href} />
+              <PostContainer key={index}>
+                <Post className="group" as="a" >
+                  {/* <Image imageSrc={post.imageSrc} /> */}
                   <Info>
-                    <Category>{post.category}</Category>
-                    <CreationDate>{post.blog}</CreationDate>
+                    <Category>{post.username}</Category>
+                    <CreationDate>{post.title}</CreationDate>
                     <Link to={`/single/${post._id}`}>
                       <Title>{post.title}</Title>
                     </Link>
-                    {post.featured && post.desc && <Description>{post.desc}</Description>}
+                    {/* {post.featured && post.description && <Description>{post.description}</Description>} */}
                   </Info>
                 </Post>
               </PostContainer>
