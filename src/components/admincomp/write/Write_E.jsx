@@ -3,10 +3,16 @@ import React, { useState, useRef } from "react";
 import axios from "axios";
 import JoditEditor from "jodit-react";
 import { useCookies } from "react-cookie";
-import Header, { NavLink, NavLinks, PrimaryLink, LogoLink, NavToggle, DesktopNavLinks } from "components/headers/light.js";
+import Header, {
+  NavLink,
+  NavLinks,
+  PrimaryLink,
+  LogoLink,
+  NavToggle,
+  DesktopNavLinks,
+} from "components/headers/light.js";
 import tw from "twin.macro";
 import styled from "styled-components";
-
 
 export default function Write() {
   const editor = useRef(null);
@@ -26,54 +32,39 @@ export default function Write() {
     formData.append("desc", desc);
     formData.append("blog", blog);
     formData.append("author", author);
-    const res = await axios.post("/posts", formData, {
+    console.log(cookies.token);
+    const res = await axios.post("/events", formData, {
       headers: { Authorization: `Bearer ${cookies.token}` },
     });
     console.log(res);
   };
   const StyledHeader = styled(Header)`
-  ${tw`pt-8 max-w-none`}
-  ${DesktopNavLinks} ${NavLink}, ${LogoLink} {
-    ${tw`text-gray-100 hover:border-gray-300 hover:text-gray-300`}
-  }
-  ${NavToggle}.closed {
-    ${tw`text-gray-100 hover:text-primary-500`}
-  }
-`;
+    ${tw`pt-8 max-w-none`}
+    ${DesktopNavLinks} ${NavLink}, ${LogoLink} {
+      ${tw`text-gray-100 hover:border-gray-300 hover:text-gray-300`}
+    }
+    ${NavToggle}.closed {
+      ${tw`text-gray-100 hover:text-primary-500`}
+    }
+  `;
   const OpacityOverlay = tw.div`z-10 absolute inset-0 bg-primary-500 opacity-25`;
   const navLinks = [
     <NavLinks key={1}>
-      <NavLink href="/">
-        Home
-      </NavLink>
-      <NavLink href="/blogging">
-        Blogs
-      </NavLink>
-      <NavLink href="/accha">
-        Aksharshala
-      </NavLink>
-      <NavLink href="/team1">
-        About
-      </NavLink>
-      <NavLink href="/team">
-        Team
-      </NavLink>
-      <NavLink href="/events_page">
-        Events
-      </NavLink>
+      <NavLink href="/">Home</NavLink>
+      <NavLink href="/blogging">Blogs</NavLink>
+      <NavLink href="/accha">Aksharshala</NavLink>
+      <NavLink href="/team1">About</NavLink>
+      <NavLink href="/team">Team</NavLink>
+      <NavLink href="/events_page">Events</NavLink>
     </NavLinks>,
     <NavLinks key={2}>
-      <PrimaryLink href="/bloodyForm">
-        Join Us
-      </PrimaryLink>
-    </NavLinks>
+      <PrimaryLink href="/bloodyForm">Join Us</PrimaryLink>
+    </NavLinks>,
   ];
 
   return (
     <div className="write">
-      <div className="nav-bar">
-        {navLinks}
-      </div>
+      <div className="nav-bar">{navLinks}</div>
       <img
         className="writeImg"
         src="https://images.pexels.com/photos/6685428/pexels-photo-6685428.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
@@ -94,7 +85,6 @@ export default function Write() {
             id="title"
             name="title"
             placeholder="username"
-            
             required
           />
           <input
@@ -114,7 +104,6 @@ export default function Write() {
           />
         </div>
         <div className="writeFormGroup">
-         
           <JoditEditor
             ref={editor}
             placeholder="Description"

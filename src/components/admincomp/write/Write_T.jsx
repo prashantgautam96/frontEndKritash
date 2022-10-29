@@ -3,10 +3,16 @@ import React, { useState, useRef } from "react";
 import axios from "axios";
 import JoditEditor from "jodit-react";
 import { useCookies } from "react-cookie";
-import Header, { NavLink, NavLinks, PrimaryLink, LogoLink, NavToggle, DesktopNavLinks } from "components/headers/light.js";
+import Header, {
+  NavLink,
+  NavLinks,
+  PrimaryLink,
+  LogoLink,
+  NavToggle,
+  DesktopNavLinks,
+} from "components/headers/light.js";
 import tw from "twin.macro";
 import styled from "styled-components";
-
 
 export default function Write_T() {
   const editor = useRef(null);
@@ -31,51 +37,34 @@ export default function Write_T() {
     });
     console.log(res);
   };
-//   const StyledHeader = styled(Header)`
-//   ${tw`pt-8 max-w-none`}
-//   ${DesktopNavLinks} ${NavLink}, ${LogoLink} {
-//     ${tw`text-gray-100 hover:border-gray-300 hover:text-gray-300`}
-//   }
-//   ${NavToggle}.closed {
-//     ${tw`text-gray-100 hover:text-primary-500`}
-//   }
-// `;
- 
+  //   const StyledHeader = styled(Header)`
+  //   ${tw`pt-8 max-w-none`}
+  //   ${DesktopNavLinks} ${NavLink}, ${LogoLink} {
+  //     ${tw`text-gray-100 hover:border-gray-300 hover:text-gray-300`}
+  //   }
+  //   ${NavToggle}.closed {
+  //     ${tw`text-gray-100 hover:text-primary-500`}
+  //   }
+  // `;
+
   const navLinks = [
     <NavLinks key={1}>
-      <NavLink href="/">
-        Home
-      </NavLink>
-      <NavLink href="/blogging">
-        Blogs
-      </NavLink>
-      <NavLink href="/accha">
-        Aksharshala
-      </NavLink>
-      <NavLink href="/team1">
-        About
-      </NavLink>
-      <NavLink href="/team">
-        Team
-      </NavLink>
-      <NavLink href="/events_page">
-        Events
-      </NavLink>
+      <NavLink href="/">Home</NavLink>
+      <NavLink href="/blogging">Blogs</NavLink>
+      <NavLink href="/accha">Aksharshala</NavLink>
+      <NavLink href="/team1">About</NavLink>
+      <NavLink href="/team">Team</NavLink>
+      <NavLink href="/events_page">Events</NavLink>
     </NavLinks>,
     <NavLinks key={2}>
-      <PrimaryLink href="/bloodyForm">
-        Join Us
-      </PrimaryLink>
-    </NavLinks>
+      <PrimaryLink href="/bloodyForm">Join Us</PrimaryLink>
+    </NavLinks>,
   ];
 
   return (
     <div className="write">
-   
       {/* <StyledHeader links={navLinks} /> */}
-      <div className="nav-bar">
-        {navLinks}
-      </div>
+      <div className="nav-bar">{navLinks}</div>
       <img
         className="writeImg"
         src="https://images.pexels.com/photos/6685428/pexels-photo-6685428.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
@@ -84,20 +73,13 @@ export default function Write_T() {
       <form className="writeForm" onSubmit={handleSubmit}>
         <div className="writeFormGroup">
           <input
-            id="fileInput"
-            type="file"
-            placeholder="username"
-            style={{ display: "none" }}
-            onChange={(e) => setName(e.target.value)}
-          />
-          <input
             type="text"
             className="form-control"
             id="title"
             name="title"
             placeholder="username"
-            
             required
+            onChange={(e) => setName(e.target.value)}
           />
           <input
             type="file"
@@ -116,7 +98,6 @@ export default function Write_T() {
           />
         </div>
         <div className="writeFormGroup">
-         
           <JoditEditor
             ref={editor}
             placeholder="Current"
@@ -128,7 +109,6 @@ export default function Write_T() {
             id="subject"
             placeholder="Year"
             onChange={(e) => setThatyear(e.target.value)}
-           
           ></textarea>
         </div>
 
