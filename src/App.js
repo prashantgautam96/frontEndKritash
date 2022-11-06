@@ -34,6 +34,7 @@ import Signup from "pages/Signup";
 import Write_A from "components/admincomp/write/Write_A"
 import Write_E from "components/admincomp/write/Write_E"
 import Write_T from "components/admincomp/write/Write_T";
+import AllBlood_data from "components/admincomp/AllBlood_data";
 
 
 // import SinglePost from "components/singlePost/SinglePost";
@@ -102,6 +103,9 @@ export default function App() {
         </Route>
         <Route path="/Alltime">
           <Alltime />
+        </Route>
+        <Route path="/Allblood">
+          <AllBlood_data />
         </Route>
         <Route path="/single">
           <Single />

@@ -88,7 +88,7 @@ export default ({
   
     useEffect(()=>{
       const fetchPost = async ()=>{
-        const res= await axios.get("/posts")
+        const res= await axios.get("/events")
         console.log(res)
         console.log("hello check")
         setBlogs(res.data)
@@ -100,6 +100,7 @@ export default ({
   const onLoadMoreClick = () => {
     setVisible(v => v + 6);
   };
+  const imageAPI = `${process.env.REACT_APP_BACKEND_URL}/image`;
   return (
     <AnimationRevealPage>
       <Hero />
@@ -112,10 +113,10 @@ export default ({
             {blogs.slice(0, visible).map((post, index) => (
               <PostContainer key={index}>
                 <Post className="group" as="a" >
-                  {/* <Image imageSrc={post.imageSrc} /> */}
+                  <Image imageSrc={new URL(`${imageAPI}/${post.photo}`).href} />
                   <Info>
-                    <Category>{post.username}</Category>
-                    <CreationDate>{post.title}</CreationDate>
+                    <Category>{post.category}</Category>
+                    <CreationDate>{post.blog}</CreationDate>
                     <Link to={`/single/${post._id}`}>
                       <Title>{post.title}</Title>
                     </Link>

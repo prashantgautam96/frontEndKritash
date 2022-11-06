@@ -173,6 +173,7 @@ export default ({
       }
       fetchPost();
     },[])
+    const imageAPI = `${process.env.REACT_APP_BACKEND_URL}/image`;
   return (
     <Container>
       <ContentWithPaddingXl>
@@ -198,9 +199,9 @@ export default ({
               </CardContent>
             </Card>
           ))} */}
-          {posts.slice(1,10).map((card, index) => (
+          {posts.slice(0,10).map((card, index) => (
             <Card key={index}>
-              <CardImage imageSrc={card.imageSrc} />
+              <CardImage imageSrc={new URL(`${imageAPI}/${card.photo}`).href} />
               <CardContent>
                 <span className="position">{card.position}</span>
                 <span className="name">{card.name}</span>

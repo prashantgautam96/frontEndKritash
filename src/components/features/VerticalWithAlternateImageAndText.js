@@ -50,7 +50,7 @@ export default () => {
 
   useEffect(()=>{
     const fetchPost = async ()=>{
-      const res= await axios.get("/posts")
+      const res= await axios.get("/events")
       // console.log(res)
       setPosts(res.data)
     }
